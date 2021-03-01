@@ -27,9 +27,10 @@ for(var i = 0;i < boardliAll.length; i++){
         if((turns == 9)){
             alert('Tie Game');
             this.innerHTML = '+';
-            this.classList.remove("disable");
-            this.classList.remove(o);
-            this.classList.remove(x);
+            for(var i = 0;i < boardliAll.length; i++){
+                boardliAll[i].innerHTML = '+';
+                boardliAll[i].classList.remove('disable',o,x);
+            }
             turns = 0;
         }else if(this.classList.contains('disable')){
             alert('This spot is already filled.');
